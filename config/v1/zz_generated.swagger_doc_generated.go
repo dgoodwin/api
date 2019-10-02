@@ -593,6 +593,34 @@ func (ConsoleStatus) SwaggerDoc() map[string]string {
 	return map_ConsoleStatus
 }
 
+var map_Credential = map[string]string{
+	"":         "Credential holds cluster-wide information about credentials.  The canonical name is `cluster`.",
+	"metadata": "Standard object's metadata.",
+	"spec":     "spec holds user settable values for configuration",
+	"status":   "status holds observed values from the cluster. They may not be overridden.",
+}
+
+func (Credential) SwaggerDoc() map[string]string {
+	return map_Credential
+}
+
+var map_CredentialList = map[string]string{
+	"metadata": "Standard object's metadata.",
+}
+
+func (CredentialList) SwaggerDoc() map[string]string {
+	return map_CredentialList
+}
+
+var map_CredentialSpec = map[string]string{
+	"":         "CredentialSpec holds the cloud credentials operator configuration.",
+	"disabled": "disabled can be set to true to fully disable the cloud credentials operator. Administrators will need to manually configure credentials for all cluster components.",
+}
+
+func (CredentialSpec) SwaggerDoc() map[string]string {
+	return map_CredentialSpec
+}
+
 var map_DNS = map[string]string{
 	"":         "DNS holds cluster-wide information about DNS. The canonical name is `cluster`",
 	"metadata": "Standard object's metadata.",
