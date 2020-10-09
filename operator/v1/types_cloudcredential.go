@@ -56,6 +56,13 @@ type CloudCredentialSpec struct {
 	// will be dynamically probed for capabilities (on supported clouds/platforms).
 	// +optional
 	CredentialsMode CloudCredentialsMode `json:"credentialsMode,omitempty"`
+
+	// ExpiryHours enabled credentials rotation when using mint mode. Once the
+	// credential for a CredentialsRequest is older than the given limit, a new
+	// credential will be rotated in, keeping the old alive for a short time
+	// before it is cleaned up.  This setting should not be used on a cluster
+	// that is not using mint mode and will result in a degraded status.
+	ExpiryHours *int64 `json:"expiryHours,omitempty"`
 }
 
 // CloudCredentialStatus defines the observed status of the cloud-credential-operator.
